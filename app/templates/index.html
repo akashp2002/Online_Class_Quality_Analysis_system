@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Class Quality Review</title>
+    <link rel="stylesheet" href="/static/app.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Humaniti AI · Prototype</p>
+        <h1>Class quality review</h1>
+        <p>Review a transcript for specific, transcript-grounded teaching cues.</p>
+      </header>
+
+      <section class="privacy notice">
+        <strong>Privacy:</strong> This prototype accepts transcript text only. Submitted text is
+        analyzed in memory and is not saved by the application. Do not submit identifiable or
+        confidential classroom content to a public deployment.
+      </section>
+
+      <section class="panel">
+        <form id="analysis-form">
+          <label for="transcript-file">Choose a VTT or text transcript (optional)</label>
+          <input id="transcript-file" type="file" accept=".vtt,.txt,text/vtt,text/plain">
+          <p class="hint">Or paste transcript text below. Maximum 100,000 characters.</p>
+          <label for="transcript">Transcript</label>
+          <textarea id="transcript" name="transcript" rows="11" maxlength="100000"
+            placeholder="Paste transcript text or select a .vtt/.txt file..."></textarea>
+          <div class="form-footer">
+            <span id="char-count" class="hint">0 / 100,000</span>
+            <button id="submit-button" type="submit">Generate review</button>
+          </div>
+        </form>
+        <p id="error" class="error" role="alert" hidden></p>
+        <p id="progress" class="hint" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="report" class="report" aria-live="polite" hidden></section>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
